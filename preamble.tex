@@ -1,0 +1,87 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{tabto}
+\usepackage{float}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\usepackage[toc,page,title,titletoc]{appendix}
+% https://tex.stackexchange.com/questions/51434/biblatex-citation-order
+\usepackage[
+    backend=biber,
+    style=apa,
+    sorting=nyt
+]{biblatex}
+\addbibresource{cite.bib}
+\usepackage[parfill]{parskip}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx} % For aligning numbers by decimal point
+\usepackage{booktabs} % For better-looking horizontal separators
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+\graphicspath{ {images/} }
+\usepackage{minted}
+\usepackage{mdframed}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\usepackage{enumitem}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\usepackage{times}
+\usepackage{setspace} % Include the setspace package
+\onehalfspacing % Set line spacing to 1.5
+% \linespread{1.15}
+
+\usepackage{listings}
+
+% Setup the listings package
+\lstset{
+  basicstyle=\small\ttfamily, % The style of the code
+  numbers=left,         % Where to put the line numbers
+  numbersep=5pt,        % How far the line numbers are from the code
+  tabsize=2,            % Sets default tab size to 4 spaces
+  extendedchars=true,
+  breaklines=true,      % Sets automatic line breaking
+  frame=single,         % Adds a frame around the code
+  breakatwhitespace=true
+}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark, arrows.meta}
+
+\renewenvironment{abstract}
+ {\small
+  \begin{center}
+  \bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  \end{center}
+  \addcontentsline{toc}{chapter}{\abstractname} % Add to ToC
+  \list{}{%
+    \setlength{\leftmargin}{0pt}
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+
+\newenvironment{acknowledgements}
+ {\small
+  \begin{center}
+  \bfseries Acknowledgements\vspace{-.5em}\vspace{0pt}
+  \end{center}
+  \addcontentsline{toc}{chapter}{Acknowledgements} % Add to ToC
+  \list{}{%
+    \setlength{\leftmargin}{0pt}
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+
+ \renewcommand\tab[1][10mm]{\hspace*{#1}}
+
